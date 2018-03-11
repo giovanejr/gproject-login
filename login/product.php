@@ -13,7 +13,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Google Project - FileServer - Public</title>
+		<title>Google Project - FileServer - Product Design</title>
 		<style type="text/css">
 		
 		body {
@@ -104,7 +104,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 		<header id="header">
 			<div id="logo">
-				<h1>FileServer: Public</h1>
+				<h1>FileServer: Product Design</h1>
 			</div>
 			<nav>
 				<div class="innertube">
@@ -114,12 +114,10 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   <option value="" selected>Grupos</option>
   <option value="http://fserver.gproject.com/hr.php">HR</option>
   <option value="http://fserver.gproject.com/legal.php">Legal</option>
-  <option value="http://fserver.gproject.com/product.php">ProductDesign</option>
   <option value="http://fserver.gproject.com/market.php">MarketResearch</option>
 </select></li>
 
 					<li><a href="#">Admin</a></li>
-					<li><a href="http://fserver.gproject.com/logout.php">LogOut</a></li>
 				</ul>
 				</div>
 			</nav>
@@ -127,7 +125,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				
 		<main>
 			<div class="innertube">
-<object type="text/html" data="http://104.198.241.15:8080/elfinder.src.html" width="100%" height="1024px" style="overflow:auto;border:0px ridge blue">
+<object type="text/html" data="http://104.198.238.191:8080/elfinder.src.html" width="100%" height="1024px" style="overflow:auto;border:0px ridge blue">
 
 </object>
 				

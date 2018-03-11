@@ -1,9 +1,9 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', '172.17.0.3');
+define('DB_SERVER', 'mysql.gproject.svc');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'teste');
+define('DB_PASSWORD', '2c5efd15c8572817af9eaf798349068aa31f8d15');
 define('DB_NAME', 'users');
  
 /* Attempt to connect to MySQL database */

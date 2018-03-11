@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once 'config.php';
 // Initialize the session
 session_start();
  
@@ -7,13 +8,16 @@ session_start();
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: login.php");
   exit;
+} else{
+$sql = "SELECT username, password FROM users WHERE username = ?";
+
 }
 ?>
 <!-- Template by quackit.com -->
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Google Project - FileServer - Public</title>
+		<title>Google Project - FileServer - HR </title>
 		<style type="text/css">
 		
 		body {
@@ -104,7 +108,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 		<header id="header">
 			<div id="logo">
-				<h1>FileServer: Public</h1>
+				<h1>FileServer: HR</h1>
 			</div>
 			<nav>
 				<div class="innertube">
@@ -112,14 +116,12 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					<li><a href="http://fserver.gproject.com">Home</a></li>
 <li><select onChange="window.location.href=this.value">
   <option value="" selected>Grupos</option>
-  <option value="http://fserver.gproject.com/hr.php">HR</option>
   <option value="http://fserver.gproject.com/legal.php">Legal</option>
   <option value="http://fserver.gproject.com/product.php">ProductDesign</option>
   <option value="http://fserver.gproject.com/market.php">MarketResearch</option>
 </select></li>
 
 					<li><a href="#">Admin</a></li>
-					<li><a href="http://fserver.gproject.com/logout.php">LogOut</a></li>
 				</ul>
 				</div>
 			</nav>
@@ -127,7 +129,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				
 		<main>
 			<div class="innertube">
-<object type="text/html" data="http://104.198.241.15:8080/elfinder.src.html" width="100%" height="1024px" style="overflow:auto;border:0px ridge blue">
+<object type="text/html" data="http://35.202.0.79:8080/elfinder.src.html" width="100%" height="1024px" style="overflow:auto;border:0px ridge blue">
 
 </object>
 				
