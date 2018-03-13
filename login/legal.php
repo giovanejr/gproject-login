@@ -109,12 +109,12 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<nav>
 				<div class="innertube">
 				<ul>
-					<li><a href="http://fserver.gproject.com">Home</a></li>
+					<li><a href="http://188.84.224.35.bc.googleusercontent.com">Home</a></li>
 <li><select onChange="window.location.href=this.value">
   <option value="" selected>Grupos</option>
-  <option value="http://fserver.gproject.com/hr.php">HR</option>
-  <option value="http://fserver.gproject.com/product.php">ProductDesign</option>
-  <option value="http://fserver.gproject.com/market.php">MarketResearch</option>
+  <option value="http://188.84.224.35.bc.googleusercontent.com/hr.php">HR</option>
+  <option value="http://188.84.224.35.bc.googleusercontent.com/product.php">ProductDesign</option>
+  <option value="http://188.84.224.35.bc.googleusercontent.com/market.php">MarketResearch</option>
 </select></li>
 
 					<li><a href="#">Admin</a></li>

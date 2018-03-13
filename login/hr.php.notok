@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once 'config.php';
 // Initialize the session
 session_start();
  
@@ -7,6 +8,20 @@ session_start();
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: login.php");
   exit;
+} else{
+
+// $query = "select * from usrgrp where id_usr=(select id from users where username='".$_SESSION['username']."') and id_grp=(select id_grp from groups where grpname=\"hr\") or id_usr=(select id from users where username='".$_SESSION['username']."') and id_grp=(select id_grp from groups where grpname=\"admin\");"
+
+// $query = "select id_grp from usrgrp where id_usr=(select id from users where username='giovane') and id_grp=(select id_grp from groups where grpname='hr') or id_usr=(select id from users where username='giovane') and id_grp=(select id_grp from groups where grpname='admin');"
+
+$result = mysql_query($query);
+
+if(mysql_num_rows($result) = 0)
+{
+  header("location: login.php");
+  exit;
+}
+
 }
 ?>
 <!-- Template by quackit.com -->
@@ -109,12 +124,12 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<nav>
 				<div class="innertube">
 				<ul>
-					<li><a href="http://188.84.224.35.bc.googleusercontent.com">Home</a></li>
+					<li><a href="http://fserver.gproject.com">Home</a></li>
 <li><select onChange="window.location.href=this.value">
   <option value="" selected>Grupos</option>
-  <option value="http://188.84.224.35.bc.googleusercontent.com/legal.php">Legal</option>
-  <option value="http://188.84.224.35.bc.googleusercontent.com/product.php">ProductDesign</option>
-  <option value="http://188.84.224.35.bc.googleusercontent.com/market.php">MarketResearch</option>
+  <option value="http://fserver.gproject.com/legal.php">Legal</option>
+  <option value="http://fserver.gproject.com/product.php">ProductDesign</option>
+  <option value="http://fserver.gproject.com/market.php">MarketResearch</option>
 </select></li>
 
 					<li><a href="#">Admin</a></li>
