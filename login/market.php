@@ -2,6 +2,23 @@
 <?php
 // Initialize the session
 session_start();
+// Checking Group Permission
+$sql = "SELECT count(*) FROM usrgrp WHERE username = '$_SESSION[username]' AND grpname = 'admin' OR username = '$_SESSION[username]' AND grpname = 'hr'";
+$link = mysql_connect('mysql.gproject.svc', 'root', '2c5efd15c8572817af9eaf798349068aa31f8d15');
+if (!$link) {
+    die('Could not connect: ' . mysql_error());
+}
+if (!mysql_select_db('users')) {
+    die('Could not select database: ' . mysql_error());
+}
+$result = mysql_query($sql);
+if (!$result) {
+    die('Could not query:' . mysql_error());
+}
+if(mysql_result($result, 0) == 0){
+  header("location: access_denied.html");
+}
+mysql_close($link);
  
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
@@ -118,6 +135,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 </select></li>
 
 					<li><a href="#">Admin</a></li>
+					<li><a href="http://188.84.224.35.bc.googleusercontent.com/logout.php">LogOut</a></li>
+
 				</ul>
 				</div>
 			</nav>
