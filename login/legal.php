@@ -3,7 +3,7 @@
 // Initialize the session
 session_start();
 // Checking Group Permission
-$sql = "SELECT count(*) FROM usrgrp WHERE username = '$_SESSION[username]' AND grpname = 'admin' OR username = '$_SESSION[username]' AND grpname = 'hr'";
+$sql = "SELECT count(*) FROM usrgrp WHERE username = '$_SESSION[username]' AND grpname = 'admin' OR username = '$_SESSION[username]' AND grpname = 'legal'";
 $link = mysql_connect('mysql.gproject.svc', 'root', '2c5efd15c8572817af9eaf798349068aa31f8d15');
 if (!$link) {
     die('Could not connect: ' . mysql_error());
@@ -16,6 +16,10 @@ if (!$result) {
     die('Could not query:' . mysql_error());
 }
 if(mysql_result($result, 0) == 0){
+  openlog('ACCESS_DENIED', LOG_PID | LOG_PERROR, LOG_LOCAL0);
+  $time = date("Y/m/d_H:i:s");
+  syslog(LOG_WARNING, "$time Unauthorized client: $_SESSION[username] requesting: $_SERVER[REQUEST_URI]");
+  closelog();
   header("location: access_denied.html");
 }
 mysql_close($link);
@@ -23,7 +27,6 @@ mysql_close($link);
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: login.php");
-  exit;
 }
 ?>
 <!-- Template by quackit.com -->
